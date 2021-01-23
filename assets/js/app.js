@@ -13,7 +13,7 @@ var svg = d3
   .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
 //Read the data
-d3.csv("/data/data.csv", function (data) {
+d3.csv("assets/data/data.csv", function (data) {
   // Add X axis
   var x = d3.scaleLinear().domain([0, 24]).range([0, width]);
   svg
@@ -33,10 +33,10 @@ d3.csv("/data/data.csv", function (data) {
     .enter()
     .append("circle")
     .attr("cx", function (d) {
-      return x(d.GrLivArea);
+      return x(d.poverty);
     })
     .attr("cy", function (d) {
-      return y(d.SalePrice);
+      return y(d.hospitality);
     })
     .attr("r", 1.5)
     .style("fill", "#69b3a2");
